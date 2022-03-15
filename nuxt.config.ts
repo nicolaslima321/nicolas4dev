@@ -5,7 +5,10 @@ import IconsResolver from 'unplugin-icons/resolver'
 
 // https://v3.nuxtjs.org/docs/directory-structure/nuxt.config
 export default defineNuxtConfig({
-  buildModules: ['unplugin-icons/nuxt'],
+  buildModules: ['unplugin-icons/nuxt', '@nuxtjs/device', '@pinia/nuxt'],
+  device: {
+    refreshOnResize: true
+  },
   modules: ['@nuxtjs/color-mode'],
   vite: {
     css: {

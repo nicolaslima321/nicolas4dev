@@ -8,11 +8,14 @@
   "devDependencies": {
     "@iconify/json": "^2.1.15",
     "@nuxtjs/color-mode": "^3.0.2",
+    "@nuxtjs/device": "^2.1.0",
     "nuxt3": "latest",
     "unplugin-icons": "^0.13.4",
     "unplugin-vue-components": "^0.18.0"
   },
   "dependencies": {
+    "@pinia/nuxt": "^0.1.8",
+    "pinia": "^2.0.12",
     "sass": "^1.49.9"
   }
 }
