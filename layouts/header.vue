@@ -1,12 +1,11 @@
 <template>
-  <nav :class="headerClass">
+  <nav>
 		<input type="checkbox" id="check">
 
 		<label for="check" class="checkbtn">
 			<IconUil:bars />
 		</label>
 
-		<!-- <label class="logo">Minha Logo</label> -->
     <img
       class="header__logo"
       height="64px"
@@ -15,16 +14,32 @@
     />
 
 		<ul>
-			<li><a class="active" href="#">Início</a></li>
+			<li><a href="#">Início</a></li>
 			<li><a href="#">Sobre</a></li>
 			<li><a href="#">Serviços</a></li>
 			<li><a href="#">Contato</a></li>
-      <select v-model="$colorMode.preference">
-        <option value="system">System</option>
-        <option value="light">Light</option>
-        <option value="dark">Dark</option>
-        <option value="sepia">Sepia</option>
-      </select>
+
+			<li
+				@click="$colorMode.preference = 'dark'"
+			>
+				<a v-if="isMobile">Escurecer</a>
+				<IconUil:moon class="header__icon"/>
+			</li>
+
+			<li
+				@click="$colorMode.preference = 'sepia'"
+			>
+				<a v-if="isMobile">Leitura</a>
+				<IconUil:coffee class="header__icon"/>
+			</li>
+
+			<li
+				@click="$colorMode.preference = 'light'"
+			>
+				<a v-if="isMobile">Acender</a>
+				<IconUil:lightbulb class="header__icon"/>
+			</li>
+
 		</ul>
 	</nav>
 </template>
@@ -32,28 +47,20 @@
 <script>
 import { defineComponent, ref } from '@vue/composition-api'
 import picture from '@/assets/images/main.jpeg';
+import { isMobile } from '@/utils/device';
 
 export default defineComponent({
   name: 'Header',
   setup() {
+		const isMobile = ref(null);
 
     return {
       picture,
-    }
+			isMobile,
+    };
   },
-	computed: {
-		headerClass() {
-			switch(this.$colorMode.value) {
-				case 'light':
-				case 'system':
-					return 'header-light-mode';
-				case 'sepia':
-					return 'header-sepia-mode';
-				case 'dark':
-				default:
-					return 'header-dark-mode';
-			}
-		}
+	mounted() {
+		this.isMobile = isMobile();
 	},
 });
 </script>
@@ -75,13 +82,27 @@ nav {
   justify-content: space-between;
   padding: $space-lg;
   width: 100%;
+	box-shadow: rgba(99, 99, 99, 0.7) 0px 2px 8px 0px;
+}
 
-	&.header-dark-mode {
-		background: $dark-bg;
-	}
+.dark-mode nav {
+  background: #1b2538;
+	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  color: $dark-color;
+}
+
+.light-mode nav {
+  background: $gray-light;
+  color: $default-color;
+}
+
+.sepia-mode nav {
+  background: #EBCB8B;
+  color: $sepia-color;
 }
 
 .header__logo {
+	opacity: 85%;
   border-radius: 50%;
 }
 
@@ -104,9 +125,41 @@ nav ul li a {
 	text-transform: uppercase;
 }
 
+.dark-mode li a {
+	color: $dark-color;
+}
+
+.light-mode li a {
+	@media (min-width: 858px) {
+		color: $gray-lighter;
+	}
+
+	color: $default-color;
+
+	&:hover {
+		color: $gray-dark !important;
+	}
+}
+
+.sepia-mode li a {
+	color: $sepia-color;
+}
+
 a.active, a:hover {
-	background: #1d075f;
+	color: $link-hover-color !important;
 	transition: .5s;
+}
+
+.light-mode a.active, a:hover {
+	color: $default-color !important;
+}
+
+.dark-mode a.active, a:hover {
+	color: $gray-lighter !important;
+}
+
+.sepia-mode a.active, a:hover {
+	color: $gray-light !important;
 }
 
 .checkbtn {
@@ -117,6 +170,18 @@ a.active, a:hover {
 	font-size: 30px;
 	margin-right: 40px;
   place-self: center;
+}
+
+.dark-mode .checkbtn {
+	color: $dark-color;
+}
+
+.light-mode .checkbtn {
+	color: $gray-lighter;
+}
+
+.sepia-mode .checkbtn {
+	color: $sepia-color;
 }
 
 #check {
@@ -134,7 +199,7 @@ a.active, a:hover {
 		display: block;
 	}
 
-	ul{
+	ul {
 		position: fixed;
 		width: 100%;
 		height: 100vh;
@@ -143,6 +208,23 @@ a.active, a:hover {
 		left: -100%;
 		text-align: center;
 		transition: all .5s;
+		box-shadow: rgba(99, 99, 99, 0.9) 0px 2px 8px 0px;
+	}
+
+	.dark-mode ul {
+		background: #3B4252;
+		color: $dark-color;
+		box-shadow: rgba(99, 99, 99, 0.01) 0px 2px 8px 0px;
+	}
+
+	.light-mode ul {
+		background: $gray-lighter;
+		color: $default-color;
+	}
+
+	.sepia-mode ul {
+		background: $sepia-bg;
+		color: $sepia-color;
 	}
 
 	nav ul li{
@@ -157,11 +239,25 @@ a.active, a:hover {
 
 	a:hover, a.active {
 		background: none;
-		color: #5434af;
+		color: $link-hover-color;
 	}
 
 	#check:checked ~ ul {
 		left: 0;
+	}
+}
+
+.header__icon {
+	margin: 0;
+
+	@media (min-width: 858px) {
+		margin: 0 $space-s;
+	}
+
+	&:hover {
+		cursor: pointer;
+		color: $link-hover-color !important;
+		transition: .5s;
 	}
 }
 </style>
