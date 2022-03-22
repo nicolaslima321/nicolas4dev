@@ -6,32 +6,34 @@
       width="64px"
       :src="picture"
     />
+
+    <IconUil:bars style="height: 3em; width: 3em;" @click="sidebarIsActive = !sidebarIsActive"/>
+
     <!-- teste <IconUil:`${queiconeeesse}` style="height: 3em; width: 3em;"/> testeee -->
     teste
     teste
-    <div>
-      <h1>Color mode: {{ $colorMode.value }}</h1>
-      <select v-model="$colorMode.preference">
-        <option value="system">System</option>
-        <option value="light">Light</option>
-        <option value="dark">Dark</option>
-        <option value="sepia">Sepia</option>
-      </select>
-    </div>
   </div>
 </template>
 
 <script>
-import { defineComponent } from '@vue/composition-api'
+import { defineComponent, ref } from '@vue/composition-api'
 import picture from '@/assets/images/main.jpeg';
 
 export default defineComponent({
   name: 'TheHeaderDefault',
+  layout: "header",
   setup() {
+    const sidebarIsActive = ref(false)
+    // const colorMode = useColorMode();
+
+    // console.log(colorMode.preference)
     console.log('hellowww');
+
     const queiconeeesse = 'IconUil:linkedin'
 
     return {
+      // colorMode,
+      sidebarIsActive,
       picture,
       queiconeeesse,
     }

@@ -1,7 +1,18 @@
 <template>
   <div>
-    <TheHeaderDefault v-if="$device.isDesktop" />
-    <TheHeaderMobile v-else />
+    <NuxtLayout name="header"/>
+
+    The rest of the page
+    sua mae de 45a n
+    <div>
+      <h1>Color mode: {{ $colorMode.value }}</h1>
+      <select v-model="$colorMode.preference">
+        <option value="system">System</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+        <option value="sepia">Sepia</option>
+      </select>
+    </div>
   </div>
 </template>
 
@@ -30,8 +41,8 @@ export default defineComponent({
 
 
 <style lang="scss">
-.index__img {
-  border-radius: 50%;
+.index {
+  color: black;
 }
 
 span {

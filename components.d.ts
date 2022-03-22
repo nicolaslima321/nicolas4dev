@@ -4,9 +4,14 @@
 
 declare module 'vue' {
   export interface GlobalComponents {
+    'IconUil:bars': typeof import('~icons/uil/bars')['default']
+    'IconUil:hamburguer': typeof import('~icons/uil/hamburguer')['default']
     'IconUil:icBaselineAcUnit': typeof import('~icons/uil/ic-baseline-ac-unit')['default']
     'IconUil:linkedin': typeof import('~icons/uil/linkedin')['default']
     'IconUil:linkedinFill': typeof import('~icons/uil/linkedin-fill')['default']
+    'IconUil:mamburguer': typeof import('~icons/uil/mamburguer')['default']
+    'IconUil:menu': typeof import('~icons/uil/menu')['default']
+    'IconUil:menuHamburguer': typeof import('~icons/uil/menu-hamburguer')['default']
     'IconUil:sun': typeof import('~icons/uil/sun')['default']
     'IconUil:user': typeof import('~icons/uil/user')['default']
   }

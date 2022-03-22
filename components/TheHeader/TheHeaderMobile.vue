@@ -8,7 +8,6 @@
     />
 
     <!-- <div class="app-links"> -->
-      <SidebarNav />
     <!-- </div> -->
     <!-- teste <IconUil:`${queiconeeesse}` style="height: 3em; width: 3em;"/> testeee -->
     teste amaterasu
@@ -29,12 +28,8 @@
 <script>
 import { defineComponent } from '@vue/composition-api'
 import picture from '@/assets/images/main.jpeg';
-import SidebarNav from '@/components/Tools/SidebarNav.vue';
 
 export default defineComponent({
-  components: {
-    SidebarNav,
-  },
   setup() {
     console.log('hellowww');
     const queiconeeesse = 'IconUil:linkedin'
