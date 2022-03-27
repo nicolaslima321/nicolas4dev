@@ -4,14 +4,17 @@
 body {
   background-color: $default-bg;
   color: $default-color;
+  transition: 1.25s;
 }
 
 .dark-mode body {
   background-color: $dark-bg;
   color: $dark-color;
+  transition: 1.25s;
 }
 
 .sepia-mode body {
   background-color: $sepia-bg;
   color: $sepia-color;
+  transition: 1.25s;
 }

@@ -122,3 +122,7 @@ $container-md:                 $container-desktop !default;
 $container-large-desktop:      (1140px + $grid-gutter-width) !default;
 //** For `$screen-lg-min` and up.
 $container-lg:                 $container-large-desktop !default;
+
+// Layout Variables
+$header-height: 8vh;
+$header-width: 100vw;

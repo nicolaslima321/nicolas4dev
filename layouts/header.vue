@@ -78,10 +78,11 @@ nav {
   align-items: center;
   background: #5434af;
   display: flex;
-  height: 80px;
+	font-weight: 600;
+  height: $header-height;
   justify-content: space-between;
   padding: $space-lg;
-  width: 100%;
+  width: $header-width;
 	box-shadow: rgba(99, 99, 99, 0.7) 0px 2px 8px 0px;
 }
 
