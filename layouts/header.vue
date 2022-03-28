@@ -23,21 +23,21 @@
 			<li
 				@click="$colorMode.preference = 'dark'"
 			>
-				<a v-show="isMobile">Dark Mode</a>
+				<a v-show="isMobileView">Dark Mode</a>
 				<IconUil:moon class="header__icon"/>
 			</li>
 
 			<li
 				@click="$colorMode.preference = 'sepia'"
 			>
-				<a v-show="isMobile">Sepia Mode</a>
+				<a v-show="isMobileView">Sepia Mode</a>
 				<IconUil:coffee class="header__icon"/>
 			</li>
 
 			<li
 				@click="$colorMode.preference = 'light'"
 			>
-				<a v-show="isMobile">Turn on Lights</a>
+				<a v-show="isMobileView">Turn on Lights</a>
 				<IconUil:lightbulb class="header__icon"/>
 			</li>
 
@@ -53,15 +53,20 @@ import { isMobile } from '@/utils/device';
 export default defineComponent({
   name: 'Header',
   setup() {
-		const isMobile = ref(null);
+		const mounted = ref(false);
 
     return {
+			mounted,
       picture,
-			isMobile,
     };
   },
+	mounted() {
+		this.mounted = true;
+	},
 	computed: {
-		isMobile() {
+		isMobileView() {
+			if (!this.mounted) return;
+
 			return isMobile();
 		},
 	},

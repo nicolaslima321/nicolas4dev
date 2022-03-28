@@ -3,6 +3,7 @@
     <NuxtLayout name="header"/>
 
     <div class="articles">
+      WIP :D
       <!-- TODO: Create Card Component and request Back-end to display saved articles -->
 
     </div>
