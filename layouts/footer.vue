@@ -1,7 +1,8 @@
 <template>
   <footer class="footer">
 		<span class="footer__span">
-			<h3>Build with <strong class="index__text-gradient">Nuxt3</strong> and much love</h3>
+			<IconUil:vuejs class="footer__vuejs" />
+			<h3 class="footer__title">Build with <strong class="index__text-gradient">Nuxt3</strong> and much love</h3>
 			<IconUil:heart class="footer__icon" />
 		</span>
 	</footer>
@@ -23,8 +24,25 @@ export default defineComponent({
 	padding: $space-m 0;
 }
 
+.footer__title {
+	font-size: $font-size-h4;
+
+	@media(min-width: $screen-desktop) {
+    font-size: initial;
+  }
+}
+
 .footer__span {
 	display: flex;
+}
+
+.footer__vuejs {
+	margin-right: $space-xs;
+
+	&:hover {
+		transition: 1s;
+		color: rgb(139, 226, 161);
+	}
 }
 
 .footer__icon {

@@ -14,10 +14,10 @@
     />
 
 		<ul>
-			<li><a href="#">Início</a></li>
-			<li><a href="#">Sobre</a></li>
-			<li><a href="#">Serviços</a></li>
-			<li><a href="#">Contato</a></li>
+			<li><nuxt-link to="/">Home</nuxt-link></li>
+			<li><nuxt-link to="/about">About</nuxt-link></li>
+			<li><nuxt-link to="/articles">Articles</nuxt-link></li>
+			<li><nuxt-link to="/contact">Contact</nuxt-link></li>
 
 			<li
 				@click="$colorMode.preference = 'dark'"

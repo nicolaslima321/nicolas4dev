@@ -7,11 +7,15 @@
         <h1 class="index__title">Welcome to <strong class="index__text-gradient">Nicolas Lima</strong> development blog! :D</h1>
       </div>
 
-      <h2 class="index__greeting-complementary">
-        You probably know me from
+      <h2 class="index__subtitle">
+        You problaby will know me as
         <strong class="index__text-gradient">@nicolaslima321</strong> ||
         <strong class="index__text-gradient"> @nicolas4dev </strong> ||
-        just by <strong class="index__text-gradient"> Nicolas Lima </strong>
+        just by <strong class="index__text-gradient"> Nicolas Lima.</strong> I'm a Software Engineer
+        with emphasis acting as <strong class="index__text-gradient">Full-Stack</strong> development,
+        in love about booth <strong class="index__text-gradient">Back-End</strong> and <strong class="index__text-gradient">Front-End</strong>.
+        <strong class="index__text-gradient">Linux</strong> and <strong class="index__text-gradient">JavaScript</strong> lover.
+        I appreciate a lot, to help and engage with the community of Software Development.
       </h2>
     </div>
 
@@ -21,37 +25,30 @@
 
 <script>
 import { defineComponent } from '@vue/composition-api'
-import picture from '@/assets/images/main.jpeg';
 
 export default defineComponent({
-  setup() {
-    return {
-      picture,
-    }
-  },
+  name: 'Index',
 })
 </script>
 
-
 <style lang="scss">
 .index {
-  // align-content: center;
   align-items: center;
   display: flex;
   flex-direction: column;
-  min-height: calc(100vh - (2 * $header-height));
+  min-height: calc(100vh - (2.5 * $header-height));
   justify-content: center;
   min-width: 100vw;
   padding: $space-s $space-m;
   text-align: center;
 
   @media(min-width: $screen-desktop) {
-    padding: $space-lg;
+    padding: $space-xl;
   }
 }
 
 .index__title {
-  font-size: $font-size-h2;
+  font-size: $font-size-h3;
 
   @media(min-width: $screen-desktop) {
     font-size: $font-size-h1;
@@ -63,18 +60,16 @@ export default defineComponent({
   display: flex;
   flex-direction: column;
   margin-bottom: $space-lg;
-
-  // @media(min-width: $screen-desktop) {
-  //   margin-bottom: $space-lg;
-  // }
 }
 
-.index__greeting-complementary {
-  text-align: center;
+.index__subtitle {
+  font-size: $font-size-h4;
+  text-align: justify;
+  text-align-last: center;
 
-  // @media(min-width: $screen-desktop) {
-  //   text-align: center;
-  // }
+  @media(min-width: $screen-desktop) {
+    font-size: $font-size-h2;
+  }
 }
 
 .index__text-gradient {
