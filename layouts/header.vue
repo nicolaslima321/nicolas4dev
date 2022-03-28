@@ -10,6 +10,7 @@
       class="header__logo"
       height="64px"
       width="64px"
+			:alt="'nicolas'"
       :src="picture"
     />
 
@@ -22,21 +23,21 @@
 			<li
 				@click="$colorMode.preference = 'dark'"
 			>
-				<a v-if="isMobile">Escurecer</a>
+				<a v-if="isMobile">Dark Mode</a>
 				<IconUil:moon class="header__icon"/>
 			</li>
 
 			<li
 				@click="$colorMode.preference = 'sepia'"
 			>
-				<a v-if="isMobile">Leitura</a>
+				<a v-if="isMobile">Sepia Mode</a>
 				<IconUil:coffee class="header__icon"/>
 			</li>
 
 			<li
 				@click="$colorMode.preference = 'light'"
 			>
-				<a v-if="isMobile">Acender</a>
+				<a v-if="isMobile">Turn on Lights</a>
 				<IconUil:lightbulb class="header__icon"/>
 			</li>
 
@@ -103,8 +104,10 @@ nav {
 }
 
 .header__logo {
-	opacity: 85%;
   border-radius: 50%;
+	height: 64px;
+	opacity: 85%;
+	width: 64px;
 }
 
 nav ul {
