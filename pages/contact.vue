@@ -23,7 +23,7 @@
 
         <nuxt-link class="contact__section-item" to="https://www.linkedin.com/in/nicolas-lima-98a0a1131/">
           <h1 class="contact__title"><strong class="contact__text-gradient">DevTo</strong></h1>
-          <!-- <IconUil:dev-to class="contact__section-icon"/> -->
+          <IconMdi:dev-to class="contact__section-icon"/>
         </nuxt-link>
 
         <nuxt-link class="contact__section-item" to="https://www.linkedin.com/in/nicolas-lima-98a0a1131/">
