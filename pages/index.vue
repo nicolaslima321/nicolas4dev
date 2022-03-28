@@ -3,8 +3,12 @@
     <NuxtLayout name="header"/>
 
     <div class="index">
-      <div class="index__greeting">
-        <h1 class="index__title">Welcome to <strong class="index__text-gradient">Nicolas Lima</strong> development blog! :D</h1>
+      <div class="index__main-section">
+        <h1 class="index__title">Welcome to <strong class="index__text-gradient">Nicolas Lima</strong> development blog! 🚀</h1>
+      </div>
+
+      <div class="index__main-section">
+        <h2 class="index__day_phrase">Day Phrase: <strong class="index__text-gradient">{{ dayPhrase }}</strong></h2>
       </div>
 
       <h2 class="index__subtitle">
@@ -28,6 +32,16 @@ import { defineComponent } from '@vue/composition-api'
 
 export default defineComponent({
   name: 'Index',
+  setup() {
+    const dayPhrase = 'Never deploy on a friday!';
+
+    return { dayPhrase }
+  },
+  head() {
+    return {
+      title: "Nicolas4dev - Home"
+    };
+  },
 })
 </script>
 
@@ -36,9 +50,9 @@ export default defineComponent({
   align-items: center;
   display: flex;
   flex-direction: column;
-  min-height: calc(100vh - (2.5 * $header-height));
+  height: calc(100vh - (2.5 * $header-height));
   justify-content: center;
-  min-width: 100vw;
+  max-width: 100%;
   padding: $space-s $space-m;
   text-align: center;
 
@@ -55,11 +69,20 @@ export default defineComponent({
   }
 }
 
-.index__greeting {
+.index__main-section {
   align-items: center;
   display: flex;
   flex-direction: column;
   margin-bottom: $space-lg;
+}
+
+.index__day_phrase {
+  font-size: $font-size-h4;
+  text-align-last: center;
+
+  @media(min-width: $screen-desktop) {
+    font-size: $font-size-h2;
+  }
 }
 
 .index__subtitle {

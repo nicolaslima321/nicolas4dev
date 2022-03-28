@@ -2,35 +2,8 @@
   <div>
     <NuxtLayout name="header"/>
 
-    <div class="contact">
-      <h1 class="contact__title">Hey! You can <strong class="contact__text-gradient">reach me out</strong> at:</h1>
-
-      <section class="contact__section">
-        <nuxt-link class="contact__section-item" to="https://www.linkedin.com/in/nicolas-lima-98a0a1131/">
-          <h1 class="contact__title"><strong class="contact__text-gradient">LinkedIn</strong></h1>
-          <IconUil:linkedin class="contact__section-icon"/>
-        </nuxt-link>
-
-        <nuxt-link class="contact__section-item" to="https://www.linkedin.com/in/nicolas-lima-98a0a1131/">
-          <h1 class="contact__title"><strong class="contact__text-gradient">GitHub</strong></h1>
-          <IconUil:github class="contact__section-icon"/>
-        </nuxt-link>
-
-        <nuxt-link class="contact__section-item" to="https://www.linkedin.com/in/nicolas-lima-98a0a1131/">
-          <h1 class="contact__title"><strong class="contact__text-gradient">Laboratory</strong></h1>
-          <IconUil:github class="contact__section-icon"/>
-        </nuxt-link>
-
-        <nuxt-link class="contact__section-item" to="https://www.linkedin.com/in/nicolas-lima-98a0a1131/">
-          <h1 class="contact__title"><strong class="contact__text-gradient">DevTo</strong></h1>
-          <IconMdi:dev-to class="contact__section-icon"/>
-        </nuxt-link>
-
-        <nuxt-link class="contact__section-item" to="https://www.linkedin.com/in/nicolas-lima-98a0a1131/">
-          <h1 class="contact__title"><strong class="contact__text-gradient">Instagram</strong></h1>
-          <IconUil:instagram class="contact__section-icon"/>
-        </nuxt-link>
-      </section>
+    <div class="articles">
+      <!-- TODO: Create Card Component and request Back-end to display saved articles -->
 
     </div>
 
@@ -42,12 +15,17 @@
 import { defineComponent } from '@vue/composition-api'
 
 export default defineComponent({
-  name: 'Contact',
+  name: 'Articles',
+  head() {
+    return {
+      title: "Nicolas4dev - Articles"
+    };
+  },
 })
 </script>
 
 <style lang="scss">
-.contact {
+.articles {
   align-items: flex-start;
   display: flex;
   flex-direction: column;
@@ -62,7 +40,7 @@ export default defineComponent({
   }
 }
 
-.contact__title {
+.articles__title {
   font-size: $font-size-h3;
 
   @media(min-width: $screen-desktop) {
@@ -70,51 +48,7 @@ export default defineComponent({
   }
 }
 
-.contact__section {
-  align-items: flex-start;
-  align-content: flex-start;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  width: 100%;
-
-  @media(min-width: $screen-desktop) {
-    align-items: center;
-    align-content: center;
-    flex-direction: row;
-    margin: $space-lg 0;
-  }
-}
-
-.contact__section-item {
-  align-items: center;
-  display: flex;
-}
-
-.contact__section-icon {
-  margin-left: $space-m;
-  height: 48px;
-  width: 48px;
-}
-
-.contact__greeting {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  margin-bottom: $space-lg;
-}
-
-.contact__subtitle {
-  font-size: $font-size-h4;
-  text-align: justify;
-  text-align-last: center;
-
-  @media(min-width: $screen-desktop) {
-    font-size: $font-size-h2;
-  }
-}
-
-.contact__text-gradient {
+.articles__text-gradient {
   background: #707876;
   background: -webkit-linear-gradient(to right, #707876 0%, #153D40 100%);
   background: -moz-linear-gradient(to right, #707876 0%, #153D40 100%);

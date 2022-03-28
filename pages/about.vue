@@ -2,34 +2,29 @@
   <div>
     <NuxtLayout name="header"/>
 
-    <div class="contact">
-      <h1 class="contact__title">Hey! You can <strong class="contact__text-gradient">reach me out</strong> at:</h1>
+    <div class="about">
+      <img
+        class="about__image"
+        height="128px"
+        width="128px"
+        :alt="'nicolas'"
+        :src="picture"
+      />
 
-      <section class="contact__section">
-        <nuxt-link class="contact__section-item" to="https://www.linkedin.com/in/nicolas-lima-98a0a1131/">
-          <h1 class="contact__title"><strong class="contact__text-gradient">LinkedIn</strong></h1>
-          <IconUil:linkedin class="contact__section-icon"/>
-        </nuxt-link>
+      <section class="about__section">
+        <h1 class="about__title about__text-gradient">nicolas@host:~$ whoami?</h1>
 
-        <nuxt-link class="contact__section-item" to="https://www.linkedin.com/in/nicolas-lima-98a0a1131/">
-          <h1 class="contact__title"><strong class="contact__text-gradient">GitHub</strong></h1>
-          <IconUil:github class="contact__section-icon"/>
-        </nuxt-link>
-
-        <nuxt-link class="contact__section-item" to="https://www.linkedin.com/in/nicolas-lima-98a0a1131/">
-          <h1 class="contact__title"><strong class="contact__text-gradient">Laboratory</strong></h1>
-          <IconUil:github class="contact__section-icon"/>
-        </nuxt-link>
-
-        <nuxt-link class="contact__section-item" to="https://www.linkedin.com/in/nicolas-lima-98a0a1131/">
-          <h1 class="contact__title"><strong class="contact__text-gradient">DevTo</strong></h1>
-          <IconMdi:dev-to class="contact__section-icon"/>
-        </nuxt-link>
-
-        <nuxt-link class="contact__section-item" to="https://www.linkedin.com/in/nicolas-lima-98a0a1131/">
-          <h1 class="contact__title"><strong class="contact__text-gradient">Instagram</strong></h1>
-          <IconUil:instagram class="contact__section-icon"/>
-        </nuxt-link>
+        <div class="about__text">
+          <p>My history with programming started at 2014. Since then, I got a passionate for software development, and engineering.</p>
+          <p>
+            I'm currently learning and having fun with Front-end and Back-end, my prefered stacks are VueJS, TypeScript, JavaScript, PHP and Elixir.
+            But I also know something about React, and some others :P
+          </p>
+          <p>
+            When I started my carrer I got very difficult to learn and practice my skills, new technologies, or improve the knowed ones.
+            So after some years of experience, I decided to create a public profile to help community, just like the help I wanted to some past years ago.
+          </p>
+        </div>
       </section>
 
     </div>
@@ -40,29 +35,53 @@
 
 <script>
 import { defineComponent } from '@vue/composition-api'
+import picture from '@/assets/images/nicolas4dev.png';
 
 export default defineComponent({
-  name: 'Contact',
+  name: 'About',
+  setup() {
+    return {
+      picture,
+    };
+  },
+  head() {
+    return {
+      title: "Nicolas4dev - About Me"
+    };
+  },
 })
 </script>
 
 <style lang="scss">
-.contact {
-  align-items: flex-start;
+.about {
+  align-items: center;
   display: flex;
   flex-direction: column;
   min-height: calc(100vh - (2.5 * $header-height));
-  justify-content: center;
   min-width: 100vw;
-  padding: $space-s $space-m;
-  text-align: left;
+  padding: $space-lg $space-m;
+  text-align: justify;
+  text-align-last: left;
 
   @media(min-width: $screen-desktop) {
     padding: $space-xl;
   }
 }
 
-.contact__title {
+.about__image {
+  border-radius: 50%;
+	height: 128px;
+  margin-bottom: $space-s;
+	opacity: 85%;
+	width: 128px;
+  z-index: -1;
+
+  @media(min-width: $screen-desktop) {
+    margin-bottom: 0;
+  }
+}
+
+.about__title {
   font-size: $font-size-h3;
 
   @media(min-width: $screen-desktop) {
@@ -70,9 +89,7 @@ export default defineComponent({
   }
 }
 
-.contact__section {
-  align-items: flex-start;
-  align-content: flex-start;
+.about__section {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -81,40 +98,21 @@ export default defineComponent({
   @media(min-width: $screen-desktop) {
     align-items: center;
     align-content: center;
-    flex-direction: row;
     margin: $space-lg 0;
   }
 }
 
-.contact__section-item {
-  align-items: center;
-  display: flex;
-}
-
-.contact__section-icon {
-  margin-left: $space-m;
-  height: 48px;
-  width: 48px;
-}
-
-.contact__greeting {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  margin-bottom: $space-lg;
-}
-
-.contact__subtitle {
+.about__text {
   font-size: $font-size-h4;
-  text-align: justify;
-  text-align-last: center;
+  margin: $space-s 0;
 
   @media(min-width: $screen-desktop) {
-    font-size: $font-size-h2;
+    font-size: $font-size-h3;
+    margin: $space-m 0;
   }
 }
 
-.contact__text-gradient {
+.about__text-gradient {
   background: #707876;
   background: -webkit-linear-gradient(to right, #707876 0%, #153D40 100%);
   background: -moz-linear-gradient(to right, #707876 0%, #153D40 100%);

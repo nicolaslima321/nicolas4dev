@@ -6,8 +6,19 @@
   <!-- </div> -->
 </template>
 
-<script setup>
-const colorMode = useColorMode();
+<script>
+export default {
+  setup() {
+    const colorMode = useColorMode();
+
+    return { colorMode }
+  },
+  head() {
+    return {
+      title: "Nicolas4dev"
+    };
+  },
+};
 </script>
 
 <style lang="scss">

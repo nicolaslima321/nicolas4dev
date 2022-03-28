@@ -3,33 +3,53 @@
     <NuxtLayout name="header"/>
 
     <div class="contact">
-      <h1 class="contact__title">Hey! You can <strong class="contact__text-gradient">reach me out</strong> at:</h1>
+      <h1 class="contact__title">You can <strong class="contact__text-gradient">find me</strong> at:</h1>
 
       <section class="contact__section">
-        <nuxt-link class="contact__section-item" to="https://www.linkedin.com/in/nicolas-lima-98a0a1131/">
+        <a
+          class="contact__section-item"
+          href="https://www.linkedin.com/in/nicolas-lima-98a0a1131/"
+          rel="noopener nofollow noreferrer external"
+        >
           <h1 class="contact__title"><strong class="contact__text-gradient">LinkedIn</strong></h1>
           <IconUil:linkedin class="contact__section-icon"/>
-        </nuxt-link>
+        </a>
 
-        <nuxt-link class="contact__section-item" to="https://www.linkedin.com/in/nicolas-lima-98a0a1131/">
+        <a
+          class="contact__section-item"
+          href="https://github.com/nicolaslima321"
+          rel="noopener nofollow noreferrer external"
+        >
           <h1 class="contact__title"><strong class="contact__text-gradient">GitHub</strong></h1>
           <IconUil:github class="contact__section-icon"/>
-        </nuxt-link>
+        </a>
 
-        <nuxt-link class="contact__section-item" to="https://www.linkedin.com/in/nicolas-lima-98a0a1131/">
+        <a
+          class="contact__section-item"
+          href="https://github.com/nicolaslima321-labs"
+          rel="noopener nofollow noreferrer external"
+        >
           <h1 class="contact__title"><strong class="contact__text-gradient">Laboratory</strong></h1>
           <IconUil:github class="contact__section-icon"/>
-        </nuxt-link>
+        </a>
 
-        <nuxt-link class="contact__section-item" to="https://www.linkedin.com/in/nicolas-lima-98a0a1131/">
+        <a
+          class="contact__section-item"
+          href="https://dev.to/nicolaslima321"
+          rel="noopener nofollow noreferrer external"
+        >
           <h1 class="contact__title"><strong class="contact__text-gradient">DevTo</strong></h1>
           <IconMdi:dev-to class="contact__section-icon"/>
-        </nuxt-link>
+        </a>
 
-        <nuxt-link class="contact__section-item" to="https://www.linkedin.com/in/nicolas-lima-98a0a1131/">
+        <a
+          class="contact__section-item"
+          href="https://www.instagram.com/nicolas4dev/"
+          rel="noopener nofollow noreferrer external"
+        >
           <h1 class="contact__title"><strong class="contact__text-gradient">Instagram</strong></h1>
           <IconUil:instagram class="contact__section-icon"/>
-        </nuxt-link>
+        </a>
       </section>
 
     </div>
@@ -43,6 +63,11 @@ import { defineComponent } from '@vue/composition-api'
 
 export default defineComponent({
   name: 'Contact',
+  head() {
+    return {
+      title: "Nicolas4dev - Contact"
+    };
+  },
 })
 </script>
 
@@ -63,6 +88,7 @@ export default defineComponent({
 }
 
 .contact__title {
+  align-self: center;
   font-size: $font-size-h3;
 
   @media(min-width: $screen-desktop) {
@@ -71,47 +97,34 @@ export default defineComponent({
 }
 
 .contact__section {
-  align-items: flex-start;
-  align-content: flex-start;
+  align-items: center;
+  align-content: center;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  margin: $space-m 0;
   width: 100%;
 
   @media(min-width: $screen-desktop) {
-    align-items: center;
-    align-content: center;
-    flex-direction: row;
     margin: $space-lg 0;
+    flex-direction: row;
   }
 }
 
 .contact__section-item {
   align-items: center;
   display: flex;
+  margin: $space-s 0;
+
+  @media(min-width: $screen-desktop) {
+    margin: 0;
+  }
 }
 
 .contact__section-icon {
   margin-left: $space-m;
   height: 48px;
   width: 48px;
-}
-
-.contact__greeting {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  margin-bottom: $space-lg;
-}
-
-.contact__subtitle {
-  font-size: $font-size-h4;
-  text-align: justify;
-  text-align-last: center;
-
-  @media(min-width: $screen-desktop) {
-    font-size: $font-size-h2;
-  }
 }
 
 .contact__text-gradient {

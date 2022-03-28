@@ -23,21 +23,21 @@
 			<li
 				@click="$colorMode.preference = 'dark'"
 			>
-				<a v-if="isMobile">Dark Mode</a>
+				<a v-show="isMobile">Dark Mode</a>
 				<IconUil:moon class="header__icon"/>
 			</li>
 
 			<li
 				@click="$colorMode.preference = 'sepia'"
 			>
-				<a v-if="isMobile">Sepia Mode</a>
+				<a v-show="isMobile">Sepia Mode</a>
 				<IconUil:coffee class="header__icon"/>
 			</li>
 
 			<li
 				@click="$colorMode.preference = 'light'"
 			>
-				<a v-if="isMobile">Turn on Lights</a>
+				<a v-show="isMobile">Turn on Lights</a>
 				<IconUil:lightbulb class="header__icon"/>
 			</li>
 
@@ -60,8 +60,10 @@ export default defineComponent({
 			isMobile,
     };
   },
-	mounted() {
-		this.isMobile = isMobile();
+	computed: {
+		isMobile() {
+			return isMobile();
+		},
 	},
 });
 </script>
@@ -78,13 +80,13 @@ export default defineComponent({
 nav {
   align-items: center;
   background: #5434af;
+	box-shadow: rgba(99, 99, 99, 0.7) 0px 2px 8px 0px;
   display: flex;
 	font-weight: 600;
   height: $header-height;
   justify-content: space-between;
   padding: $space-lg;
   width: $header-width;
-	box-shadow: rgba(99, 99, 99, 0.7) 0px 2px 8px 0px;
 }
 
 .dark-mode nav {
