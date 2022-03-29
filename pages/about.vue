@@ -18,11 +18,11 @@
           <p>My history with programming started at 2014. Since then, I got a passionate for software development, and engineering.</p>
           <p>
             I'm currently learning and having fun with Front-end and Back-end, my prefered stacks are VueJS, TypeScript, JavaScript, PHP and Elixir.
-            But I also know something about React, and some others :P
+            But I also know something about React, and some others..
           </p>
           <p>
             When I started my carrer I got very difficult to learn and practice my skills, new technologies, or improve the knowed ones.
-            So after some years of experience, I decided to create a public profile to help community, just like the help I wanted to some past years ago.
+            So, after some years of experience, I decided to create a public profile to help community, just like the help I wanted to, some past years ago.
           </p>
         </div>
       </section>

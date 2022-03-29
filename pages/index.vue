@@ -16,9 +16,9 @@
         <strong class="index__text-gradient">@nicolaslima321</strong> ||
         <strong class="index__text-gradient"> @nicolas4dev </strong> ||
         just by <strong class="index__text-gradient"> Nicolas Lima.</strong> I'm a Software Engineer
-        with emphasis acting as <strong class="index__text-gradient">Full-Stack</strong> development,
+        with emphasis acting as <strong class="index__text-gradient">Full-Stack</strong> developer,
         in love about booth <strong class="index__text-gradient">Back-End</strong> and <strong class="index__text-gradient">Front-End</strong>.
-        <strong class="index__text-gradient">Linux</strong> and <strong class="index__text-gradient">JavaScript</strong> lover.
+        Also a <strong class="index__text-gradient">Linux</strong> and <strong class="index__text-gradient">JavaScript</strong> lover.
         I appreciate a lot, to help and engage with the community of Software Development.
       </h2>
     </div>
